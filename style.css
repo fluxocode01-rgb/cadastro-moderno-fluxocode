@@ -1,0 +1,181 @@
+/* Paleta de Cores Atualizada: Dark, Azul e Branco */
+:root {
+  --bg-dark: #0f172a; /* Preto azulado profundo para o fundo */
+  --card-bg: #1e293b; /* Cinza escuro para o corpo do formulário */
+  --primary-blue: #3b82f6; /* Azul vibrante para detalhes e botões */
+  --primary-hover: #2563eb; /* Azul um pouco mais escuro para o hover */
+  --text-white: #ffffff; /* Branco puro para títulos e labels */
+  --text-muted: #cbd5e1; /* Cinza bem claro para parágrafos */
+  --error-red: #ef4444; /* Vermelho para erros */
+  --input-bg: #0f172a; /* Fundo dos campos */
+  --border-color: #334155; /* Cor das bordas */
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark);
+  padding: 20px;
+}
+
+/* Card Principal */
+.glass-form {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Títulos e Parágrafos */
+h2 {
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--text-white); /* Branco */
+}
+
+p {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted); /* Cinza claro para não ofuscar o título */
+}
+
+/* Rótulos (Nome, E-mail, Telefone, etc.) */
+label {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-white); /* Texto informativo em Branco como pedido */
+}
+
+/* Inputs */
+input {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-white); /* Texto digitado em Branco */
+  outline: none;
+  transition: var(--transition);
+  flex-direction: column;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Foco no Input */
+input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Password Wrapper */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.password-wrapper i {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: var(--text-white);
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+/* Botão Azul */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-blue);
+  color: var(--text-white);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Validação */
+.error-msg {
+  color: var(--error-red);
+  font-size: 0.75rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.invalid input {
+  border-color: var(--error-red);
+}
+
+.invalid .error-msg {
+  display: block;
+}
+
+#successMessage {
+  margin-top: 20px;
+  text-align: center;
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #22c55e;
+}
+/* Garante o Input abaixo do Label */
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Coloca um em cima do outro */
+  align-items: flex-start; /* Alinha à esquerda */
+  width: 100%;
+}
+
+label {
+  margin-bottom: 8px; /* Espaço entre o nome e a caixa */
+  color: var(--text-white);
+  font-size: 0.85rem;
+}
+
+input {
+  width: 100%; /* Ocupa a largura total do grupo */
+}
+
+/* Esconde a mensagem de sucesso por padrão */
+.hidden {
+  display: none !important;
+}
+
+/* Estilo para quando houver erro no campo */
+.invalid input {
+  border-color: var(--error-red) !important;
+  box-shadow: 0 0 5px rgba(239, 68, 68, 0.3);
+}
